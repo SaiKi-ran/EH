@@ -1,0 +1,25 @@
+Title: Cross Site Scripting
+Domain: vulnweb.com
+Subdomain: testasp.vulnweb.com
+
+vulnweb website http://testasp.vulnweb.com/ has an endpoint that is vulnerable to an injection vulnerability also known as Reflected Cross-Site Scripting (XSS). Cross-site scripting allows attackers to enter into and inject malicious data using Javascript and other means.
+This happens because one of the GET parameters "p" does not properly sanitize/escape user input, allowing an injection to occur.
+
+Steps To Reproduce:
+1) Visit website http://testasp.vulnweb.com/
+2) Click on the search option which can be found on the top menu.
+3) As soon as we click on the search button we can see a search box for entering inputs.
+4) We can intercept the request on the Burpsuite.
+5) Also we have to search the payloads related to XSS in the browser. 
+6) We have the send the request to the intruder and paste all the payloads in the payloads section.
+7) Now start the attack by clicking on start attack button. 
+8) Find the vulnerabilities by observing the length and status each payload.
+9) Wait till all the payloads execute.
+10) Make a report of all the vulnerabilities.
+
+
+Impact:
+Using Cross-site scripting one can manipulate the code of the website and steal important credentials like usernames and passwords. This can be a huge loss to the company's economy as well as its reputation.
+
+Mitigation:
+To avoid Cross-site scripting it is recommended to enable the NoScript feature. 
